@@ -1,0 +1,22 @@
+PODS:
+  - OhhAuth (1.1.0)
+  - SDWebImage (5.11.1):
+    - SDWebImage/Core (= 5.11.1)
+  - SDWebImage/Core (5.11.1)
+
+DEPENDENCIES:
+  - OhhAuth
+  - SDWebImage (~> 5.0)
+
+SPEC REPOS:
+  trunk:
+    - OhhAuth
+    - SDWebImage
+
+SPEC CHECKSUMS:
+  OhhAuth: 0c43cb209df11abaeced699b08508fe9f577ff0b
+  SDWebImage: a7f831e1a65eb5e285e3fb046a23fcfbf08e696d
+
+PODFILE CHECKSUM: 32bef91fc727521d90efd3d799f4cb22ad58b545
+
+COCOAPODS: 1.10.1

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="t2S-MW-UcU">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Favourites-->
+        <scene sceneID="5mv-75-6ra">
+            <objects>
+                <viewController id="HZU-lt-eLO" customClass="FavouriteWallpaperViewController" customModule="FlickrApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iPM-1d-tZy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="250" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ldH-DL-tvJ">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellForFavourites" id="u9M-Ms-ovC" customClass="FavouriteTableViewCell" customModule="FlickrApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="250"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="u9M-Ms-ovC" id="CgG-ZK-pxq">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Wr-IA-HCk">
+                                                    <rect key="frame" x="30" y="30" width="354" height="190"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="9Wr-IA-HCk" secondAttribute="bottom" constant="30" id="B1h-xp-5zR"/>
+                                                <constraint firstItem="9Wr-IA-HCk" firstAttribute="leading" secondItem="CgG-ZK-pxq" secondAttribute="leading" constant="30" id="Hsj-Mt-Q47"/>
+                                                <constraint firstItem="9Wr-IA-HCk" firstAttribute="top" secondItem="CgG-ZK-pxq" secondAttribute="top" constant="30" id="Ojf-xN-Ra2"/>
+                                                <constraint firstAttribute="trailing" secondItem="9Wr-IA-HCk" secondAttribute="trailing" constant="30" id="nJP-y1-sVC"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="imageForFavourite" destination="9Wr-IA-HCk" id="Hjp-uY-3Hu"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="HZU-lt-eLO" id="tx9-4I-lgu"/>
+                                    <outlet property="delegate" destination="HZU-lt-eLO" id="Kxt-p9-frb"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="JYk-W9-eMg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="JYk-W9-eMg" firstAttribute="bottom" secondItem="ldH-DL-tvJ" secondAttribute="bottom" id="EfP-a4-70P"/>
+                            <constraint firstItem="ldH-DL-tvJ" firstAttribute="leading" secondItem="JYk-W9-eMg" secondAttribute="leading" id="QbK-t1-WTE"/>
+                            <constraint firstItem="JYk-W9-eMg" firstAttribute="trailing" secondItem="ldH-DL-tvJ" secondAttribute="trailing" id="YhO-88-LR6"/>
+                            <constraint firstItem="ldH-DL-tvJ" firstAttribute="top" secondItem="JYk-W9-eMg" secondAttribute="top" id="xRg-gf-cKI"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Favourites" image="star.fill" catalog="system" id="E81-Z2-mEd"/>
+                    <connections>
+                        <outlet property="tableViewForFavouriteWallpaper" destination="ldH-DL-tvJ" id="T4P-Wn-XpI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iAB-mL-vb4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-446" y="-94"/>
+        </scene>
+        <!--Wallpapers-->
+        <scene sceneID="O9j-xc-I3L">
+            <objects>
+                <viewController id="qQI-Wr-ovW" customClass="WallpaperViewController" customModule="FlickrApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="X98-Cs-vbF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="250" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nuk-k4-Q7J">
+                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellForWallpaper" id="SLs-Po-uGw" customClass="WallpaperTableViewCell" customModule="FlickrApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="250"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SLs-Po-uGw" id="jbV-y7-HWY">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GGc-Nu-Nb9">
+                                                    <rect key="frame" x="20" y="11" width="374" height="228"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I7Z-gN-0zQ">
+                                                            <rect key="frame" x="15" y="15" width="339" height="161"/>
+                                                        </imageView>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eA0-eC-PXj">
+                                                            <rect key="frame" x="84" y="190" width="225" height="30"/>
+                                                            <color key="backgroundColor" red="1" green="0.66228522123584477" blue="0.67636935164355727" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="12"/>
+                                                            <state key="normal" title="Add to Favourites">
+                                                                <color key="titleColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                                            </state>
+                                                        </button>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="I7Z-gN-0zQ" firstAttribute="top" secondItem="GGc-Nu-Nb9" secondAttribute="top" constant="15" id="9nF-c8-M6A"/>
+                                                        <constraint firstItem="eA0-eC-PXj" firstAttribute="leading" secondItem="GGc-Nu-Nb9" secondAttribute="leading" constant="84" id="AbF-ci-XAL"/>
+                                                        <constraint firstAttribute="bottom" secondItem="eA0-eC-PXj" secondAttribute="bottom" constant="8" id="KWT-oQ-wjj"/>
+                                                        <constraint firstAttribute="trailing" secondItem="I7Z-gN-0zQ" secondAttribute="trailing" constant="20" symbolic="YES" id="L31-wn-cg6"/>
+                                                        <constraint firstItem="eA0-eC-PXj" firstAttribute="top" secondItem="GGc-Nu-Nb9" secondAttribute="top" constant="190" id="WB2-iE-lwZ"/>
+                                                        <constraint firstAttribute="bottom" secondItem="I7Z-gN-0zQ" secondAttribute="bottom" constant="52" id="izJ-Wk-kla"/>
+                                                        <constraint firstAttribute="trailing" secondItem="eA0-eC-PXj" secondAttribute="trailing" constant="65" id="kh3-O5-p1l"/>
+                                                        <constraint firstItem="I7Z-gN-0zQ" firstAttribute="leading" secondItem="GGc-Nu-Nb9" secondAttribute="leading" constant="15" id="xqG-f4-mg0"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="GGc-Nu-Nb9" secondAttribute="bottom" constant="11" id="9wY-Wf-qfo"/>
+                                                <constraint firstAttribute="trailing" secondItem="GGc-Nu-Nb9" secondAttribute="trailing" constant="20" symbolic="YES" id="9yl-2I-8B9"/>
+                                                <constraint firstItem="GGc-Nu-Nb9" firstAttribute="top" secondItem="jbV-y7-HWY" secondAttribute="top" constant="11" id="JX1-WL-idr"/>
+                                                <constraint firstItem="GGc-Nu-Nb9" firstAttribute="leading" secondItem="jbV-y7-HWY" secondAttribute="leading" constant="20" symbolic="YES" id="Qd3-vW-eEx"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="buttonAddtoFavourites" destination="eA0-eC-PXj" id="x4Z-01-CKn"/>
+                                            <outlet property="imageForWallpaper" destination="I7Z-gN-0zQ" id="hIh-IM-PiY"/>
+                                            <outlet property="viewForCard" destination="GGc-Nu-Nb9" id="d12-CS-IOm"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="qQI-Wr-ovW" id="7sb-JN-5l5"/>
+                                    <outlet property="delegate" destination="qQI-Wr-ovW" id="qdZ-Hd-SMV"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KFv-yW-eWH"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nuk-k4-Q7J" firstAttribute="top" secondItem="KFv-yW-eWH" secondAttribute="top" id="Fog-Ks-aYu"/>
+                            <constraint firstItem="KFv-yW-eWH" firstAttribute="trailing" secondItem="nuk-k4-Q7J" secondAttribute="trailing" id="XNh-LJ-vfD"/>
+                            <constraint firstItem="KFv-yW-eWH" firstAttribute="bottom" secondItem="nuk-k4-Q7J" secondAttribute="bottom" id="Zqt-L5-kKf"/>
+                            <constraint firstItem="nuk-k4-Q7J" firstAttribute="leading" secondItem="KFv-yW-eWH" secondAttribute="leading" id="ilP-oN-BjY"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Wallpapers" image="photo" catalog="system" id="Le5-nV-l9X">
+                        <color key="badgeColor" red="1" green="0.4414017905" blue="0.57111200529999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBarItem>
+                    <connections>
+                        <outlet property="tableViewForWallpapers" destination="nuk-k4-Q7J" id="3kM-TZ-w69"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="svA-p2-W0W" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-446.37681159420293" y="-782.14285714285711"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="wJ1-Am-1r5">
+            <objects>
+                <tabBarController id="t2S-MW-UcU" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ysB-Nu-KSS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
+                        <color key="tintColor" red="1" green="0.45109677679999999" blue="0.53331492280000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="qQI-Wr-ovW" kind="relationship" relationship="viewControllers" id="6IJ-oz-MPK"/>
+                        <segue destination="HZU-lt-eLO" kind="relationship" relationship="viewControllers" id="lvt-3d-S74"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KAI-lH-XOR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1336" y="-480"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="photo" catalog="system" width="128" height="93"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiarySystemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiarySystemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
